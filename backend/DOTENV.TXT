@@ -1,0 +1,7 @@
+JWT_SECRET=
+AWS_ROLE =arn:aws:iam::491085389294:role/role1
+SERVERLESS_ORG =annatbg
+SERVERLESS_APP=webshop
+SERVERLESS_SERVICE=webshop
+DB_TABLE_USERS= users
+AWS_REGION= eu-north-1
