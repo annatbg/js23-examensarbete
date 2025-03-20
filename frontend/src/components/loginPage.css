@@ -1,0 +1,62 @@
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid hotpink;
+  background-color: rgb(254, 228, 240);
+  height: 100vh;
+}
+
+.loginHeader {
+  font-size: 30px;
+  margin-top: 20%;
+}
+
+input {
+  height: 30px;
+  font-size: 12px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  border: 1px dotted rgb(202, 96, 96);
+  padding: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  width: 80%;
+}
+
+.userbutton {
+  margin-top: 25px;
+  background-color: #ffcce1;
+  border: solid 1px rgb(226, 170, 198);
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 0.8em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  background-color: #f9b6d2;
+}
+
+.errorText {
+  color: red;
+  font-weight: 600;
+  font-size: 18px;
+}
