@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid hotpink;
+  /* border: 2px solid hotpink; */
   background-color: rgb(254, 228, 240);
   height: 100vh;
 }
@@ -21,8 +21,8 @@ input {
   display: flex;
   flex-direction: column;
   margin: 5px;
-  border: 1px dotted rgb(202, 96, 96);
-  padding: 10px;
+  /* border: 1px dotted rgb(202, 96, 96); */
+  padding: 5px;
 }
 
 label {
@@ -35,7 +35,25 @@ form {
   display: flex;
   flex-direction: column;
   padding: 10%;
-  width: 80%;
+  width: 90%;
+}
+
+.linkWrapper {
+  margin: auto;
+}
+
+.linkWrapper p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.linkText {
+  color: hotpink;
+}
+
+.linkText:hover {
+  color: hotpink;
+  text-decoration: underline;
 }
 
 .userbutton {

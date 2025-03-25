@@ -1,7 +1,13 @@
-// src/App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from "./components/loginPage"; // Din login-komponent
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
+import LandingPage from "./components/LandingPage";
 import useUser from "./store/userStore";
 
 const App = () => {
@@ -10,7 +16,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/home" element={<LandingPage />} />
       </Routes>
     </Router>
   );
