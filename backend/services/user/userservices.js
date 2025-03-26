@@ -56,19 +56,27 @@ const createUser = async (email, password, firstName, lastName) => {
 };
 
 const loginUser = async (email, password) => {
-  console.log("TABLE_NAME:", TABLE_NAME);
+  console.log("Försöker logga in med email:", email);
 
   // Hämta användaren från databasen
   const existingUser = await userExists(email);
+  console.log("userinfo", existingUser);
 
   if (!existingUser) {
+    console.log("Användare hittades inte:", email);
     throw new Error("User not found");
   }
+
+  // Logga den hämtade användardatan
+  console.log("Användardata hittad:", existingUser);
 
   // Jämför det hashade lösenordet
   const isPasswordValid = await bcrypt.compare(password, existingUser.password);
 
+  console.log("Lösenordet matchar:", isPasswordValid);
+
   if (!isPasswordValid) {
+    console.log("Felaktigt lösenord för användare:", email);
     throw new Error("Invalid credentials");
   }
 
@@ -79,9 +87,10 @@ const loginUser = async (email, password) => {
     { expiresIn: "1h" } // Giltighetstid kan anpassas
   );
 
-  console.log(`User ${email} successfully logged in.`);
+  console.log(`User ${email} successfully logged in. JWT-token skapad.`);
 
-  return token; // Returera token
+  // Returnera token till frontend
+  return { existingUser, token };
 };
 
 module.exports = { userExists, createUser, loginUser };

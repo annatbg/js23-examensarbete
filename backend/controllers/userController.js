@@ -39,7 +39,7 @@ const login = async (req, res) => {
     // Anropa loginUser för att verifiera användaren och få JWT-token
     const token = await loginUser(email, password);
 
-    // Skicka tillbaka token
+    // Skicka tillbaka token ÄNDRA TILL USER OBJEKT
     res.status(200).json({ token });
   } catch (err) {
     console.error("Error during login:", err);
