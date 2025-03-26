@@ -3,8 +3,11 @@ const serverless = require("serverless-http");
 const app = express();
 app.use(express.json());
 
+const { auth } = require("./services/utils/auth/auth");
+
 // import controllers
 const userController = require("./controllers/userController");
+const productController = require("./controllers/productController");
 
 // CORS Middleware
 app.use((req, res, next) => {
@@ -20,8 +23,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes
+// Routes user
 app.post("/register", userController.registerUser);
 app.post("/login", userController.login);
+// Routes product
+app.get("/products", productController.getProducts);
+app.post("/addproduct", auth, productController.createNewProduct);
 
 exports.handler = serverless(app);
