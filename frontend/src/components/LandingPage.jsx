@@ -9,8 +9,10 @@ const LandingPage = () => {
 
   return (
     <div className="loginWrapper">
-      <h1>Hej {user.firstName}!</h1>
+      <h1>Hej {user?.firstName}!</h1>
       <p>Du är inloggad.</p>
+
+      {/* Logga ut-knapp */}
       <button
         className="userbutton"
         onClick={() => {
@@ -19,6 +21,14 @@ const LandingPage = () => {
         }}
       >
         Logga ut
+      </button>
+
+      {/* Lägg till produkt-knapp */}
+      <button
+        className="add-product-btn"
+        onClick={() => navigate("/addproduct")}
+      >
+        +
       </button>
     </div>
   );
